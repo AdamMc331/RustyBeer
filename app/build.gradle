@@ -56,6 +56,8 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$rootProject.ext.versions.compose"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.versions.lifecycle"
     implementation "androidx.activity:activity-compose:$rootProject.ext.versions.activityCompose"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
     testImplementation "junit:junit:$rootProject.ext.versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.versions.androidxTest"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.versions.espresso"
