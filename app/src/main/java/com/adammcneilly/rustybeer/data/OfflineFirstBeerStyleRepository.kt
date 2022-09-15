@@ -4,13 +4,13 @@ import com.adammcneilly.rustybeer.models.BeerStyle
 import com.adammcneilly.rustybeer.remote.RemoteBeerStyleService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
+import javax.inject.Inject
 
 /**
  * An implementation of [BeerStyleRepository] that always displays information from a local data source,
  * but has the ability to sync with a remote data source.
  */
-class OfflineFirstBeerStyleRepository(
+class OfflineFirstBeerStyleRepository @Inject constructor(
     private val remoteService: RemoteBeerStyleService,
 ) : BeerStyleRepository {
 
