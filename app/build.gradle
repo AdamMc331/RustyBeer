@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "template.app.id"
+        applicationId "com.adammcneilly.rustybeer"
         minSdk 21
         targetSdk 32
         versionCode 1
