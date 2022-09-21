@@ -1,6 +1,5 @@
 package com.adammcneilly.rustybeer.remote
 
-import com.adammcneilly.rustybeer.models.BeerStyle
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -8,7 +7,7 @@ import retrofit2.http.GET
 interface RustyBeerRetrofitAPI {
 
     @GET("styles")
-    suspend fun getBeerStyles(): List<BeerStyle>
+    suspend fun getBeerStyles(): List<NetworkBeerStyle>
 
     companion object {
         private const val BASE_URL = "https://rustybeer.herokuapp.com/"

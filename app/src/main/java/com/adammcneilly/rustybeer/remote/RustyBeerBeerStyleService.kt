@@ -10,6 +10,13 @@ class RustyBeerBeerStyleService(
 ) : RemoteBeerStyleService {
 
     override suspend fun getBeerStyles(): List<BeerStyle> {
-        return api.getBeerStyles()
+        // Since this a quick demo app,
+        // if the network request fails, we'll just return an empty list
+        // to prevent the app from crashing.
+        return try {
+            api.getBeerStyles().map(NetworkBeerStyle::toBeerStyle)
+        } catch (e: Exception) {
+            emptyList()
+        }
     }
 }
