@@ -11,7 +11,7 @@ buildscript {
     // https://github.com/ben-manes/gradle-versions-plugin
     ext.versionsPluginVersion = "0.29.0"
 
-    ext.hiltVersion = "2.41"
+    ext.hiltVersion = "2.42"
 
     repositories {
         google()
