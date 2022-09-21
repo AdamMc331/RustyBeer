@@ -1,7 +1,8 @@
 package com.adammcneilly.rustybeer.di
 
 import android.content.Context
-import com.adammcneilly.rustybeer.local.BeerStyleDAO
+import com.adammcneilly.rustybeer.local.LocalBeerStyleService
+import com.adammcneilly.rustybeer.local.RoomBeerStyleService
 import com.adammcneilly.rustybeer.local.RustyBeerDatabase
 import dagger.Module
 import dagger.Provides
@@ -21,9 +22,11 @@ object LocalDataModule {
     }
 
     @Provides
-    fun providesBeerStyleDAO(
+    fun providesLocalBeerStyleService(
         database: RustyBeerDatabase,
-    ): BeerStyleDAO {
-        return database.beerStyleDAO()
+    ): LocalBeerStyleService {
+        return RoomBeerStyleService(
+            beerStyleDAO = database.beerStyleDAO(),
+        )
     }
 }
